@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://nqn.github.io/' rel='self' type='application/rss+xml'/>
+<title>
+Ñedquen - NqN
+</title>
+<link>
+http://nqn.github.io/
+</link>
+<description>
+Computer Science and Applied Mathematics
+</description>
+<lastBuildDate>
+Tue, 05 Feb 2019 11:46:19 +0100
+</lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://nqn.github.io/posts-output/2018-06-26-microservices_according_to_the_academia/
+</guid>
+<link>
+http://nqn.github.io/posts-output/2018-06-26-microservices_according_to_the_academia/
+</link>
+<title>
+Microservices according to the academia
+</title>
+<description>
+&lt;p&gt;During the last ten years, Cloud Computing and the relatively low cost of server renting services like Microsoft Azure, Amazon and Google Cloud have opened the opportunity to build businesses around cloud computing such as SaaS at a competitive cost.&lt;/p&gt;
+&lt;p&gt;This opportunity also brings new challenges to scale, maintain and extend those systems. A promising style of architecting software emerges by the hand of cloud computing and as the second iteration of Service Oriented Architecture, namely, Microservices.&lt;/p&gt;
+&lt;p&gt;While Microservices is becoming more relevant in the industry, theoretical and scientific coverage of this subject is still in a very early stage.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-the-microservices-definition-based-on-the-literature&quot;&gt;What is the Microservices definition based on the literature?&lt;/h2&gt;
+&lt;p&gt;Our data collection strategy consisted in search for the keywords: Microservice and microservices with a particular interest in literature studies, mapping studies and surveys. Secondly, we focus mainly on three sources: the ACM Digital Library, IEEE Explore and Springer Verlags’ digital library, SpringerLink.&lt;/p&gt;
+&lt;h2 id=&quot;so-you-had-a-method&quot;&gt;So you had a method?&lt;/h2&gt;
+&lt;p&gt;yes, Indeed.&lt;/p&gt;
+&lt;h2 id=&quot;ok-tell-me-more&quot;&gt;Ok, tell me more&lt;/h2&gt;
+&lt;p&gt;We extract definitions from the selected papers and identify similarities between them.&lt;/p&gt;
+&lt;h3 id=&quot;microservices-science-and-engineering&quot;&gt;Microservices Science and Engineering&lt;/h3&gt;
+&lt;p&gt;The following corresponds to the definition extracted from the article &amp;quot;Microservices Science and Engineering&amp;quot; from 2017.&lt;/p&gt;
+&lt;p&gt;According to Mazzara et al. [12] Microservices are not just small services, but an architectural style originated from Service-Oriented Architectures. A service is a building block that communicates exclusively by message passing. The difference from monolithic architectures and SOA is the emphasis in scalability, independence, and semantic cohesiveness of each unit.&lt;/p&gt;
+&lt;p&gt;Maintainability and evolvability are issues recognised by the authors when talking about monolithic architectures, but coming back to the definition of microservices, another distinction from this architectural style is that each service owns a dedicated persistence tool. The independence of services implies that the complexity is moved to the coordination of services often called orchestration. The distributed nature of this approach involves additional problems like trust and certification. Another interesting point mentioned in this definition is how small the service has to be, the author's answer is a single business capability. Furthermore, a small team is fully responsible for a service which should lead to an efficient communication on a team and within the whole organisation and at the same time improving modularity to the system.&lt;/p&gt;
+&lt;h3 id=&quot;microservices-yesterday-today-and-tomorrow&quot;&gt;Microservices: yesterday, today and tomorrow&lt;/h3&gt;
+&lt;p&gt;From the article &amp;quot;Microservices: yesterday, today and tomorrow&amp;quot; [6] from 2017, we extract three definitions necessaries to understand Microservices.&lt;/p&gt;
+&lt;p&gt;The first one is the concept of Monolith. A monolith is a software application whose modules cannot execute independently.&lt;/p&gt;
+&lt;p&gt;The authors also present six issues related to the monolithic architecture:&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;maintainability is challenging due to their complexity&lt;/li&gt;
+&lt;li&gt;suffer from dependency hell&lt;/li&gt;
+&lt;li&gt;change in one module requires rebooting the whole application, and therefore long downtimes are expected for large systems.&lt;/li&gt;
+&lt;li&gt;when deploying, the developer must compromise with a one-size-fits-all configuration which is either sub-optimal and or expensive concerning individual modules.&lt;/li&gt;
+&lt;li&gt;monoliths limit scalability. In a monolithic application, the strategy for scaling consists of creating new instances of the same application and split the load among instances.&lt;/li&gt;
+&lt;li&gt;technology lock-in. The developer cannot use other language or framework&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The microservices architectural style has been proposed to cope with such problems, and this is the definition we find in [6]: A microservice is a cohesive, independent process interacting via messages.&lt;/p&gt;
+&lt;p&gt;An essential part of this definition is the concept of cohesiveness, which is used in this case to indicate that the functionality of a service is strongly related to the problem it was modelled to solve. From a technical standpoint, a microservice should be an independent component deployed in isolation and equipped with dedicated memory persistence tools.&lt;/p&gt;
+&lt;p&gt;Finally, we encounter the definition of Microservice Architecture. A microservice architecture is a distributed application where all its modules are microservices.&lt;/p&gt;
+&lt;p&gt;The authors give an example of Microservice architecture. Let us consider a functionality that consists of plotting the graph of a function. Let us consider two microservices: Calculator and Displayer and in order to fulfil the task we introduce a third service, we called plotter, which orchestrates the services mentioned earlier. To illustrate how this architecture scales, the calculator function can be extended by calling two other microservices: one service that handles elementary mathematical functions and special functions. The problem I see here is that if for any reason, for instance, elementary function service is unavailable, the plotter service has to wait depending on the failure recovery strategy implemented by the architecture. Let us continue with the content of the paper. The microservice architectural style does not impose any particular programming paradigm; it only provides guidelines to partition components of a distributed application into independent specialised entities that solves one concern of the overall application. In this style of architecture, the flexibility of technology agnosticism is given by the use of message passing. Finally, the authors present solutions for each of the problems presented previously solely by implementing a Microservice Architecture.&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;The developer has to implement only a limited amount of functionality, which results in a small codebase and inherently limits the scope of a bug. The developer can directly test and investigate their functionalities in isolation concerning the rest of the system.&lt;/li&gt;
+&lt;li&gt;The developer can plan a gradual transition to a new service which promotes continuous integration easing software maintenance.&lt;/li&gt;
+&lt;li&gt;Due to the previous point, it is no longer require the reboot of the whole system when changing a module.&lt;/li&gt;
+&lt;li&gt;Microservices naturally fit containerisation which translate into a high degree of freedom in configuration and deployment environment that best suits their needs.&lt;/li&gt;
+&lt;li&gt;Scaling a Microservice does not imply duplication of all its components. The developer can conveniently dispose of instances of services to their load.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;exploration-of-academic-and-industrial-evidence-about-architectural-tactics-and-patterns-in-microservices&quot;&gt;Exploration of Academic and Industrial Evidence about Architectural Tactics and Patterns in Microservices&lt;/h3&gt;
+&lt;p&gt;A service [13] is a well-defined function, self-contained that does not depend on the context of the state of other services, whereas the Microservices architectural style [13] is defined as an approach to developing an application as a suite of small services, each running in its process and communicating with a lightweight mechanism. In this definition we infer that the authors are talking about operative system processes and what they intend to describe is the memory isolation of processes. Another characteristic mentioned in this definition is that services correspond to a business capability and that is deployed independently by a fully automated deployment mechanism. As described as well in the definitions given by J.Lewis and M. Fowlers, in the extraordinarily popular article about Microservices and by S. Newman in the book &amp;quot;Building microservices: designing fine-grained systems&amp;quot; from Oŕeilly media 2015; It is difficult to ignore the Microservices definition given by Cockcroft, one of the software engineers responsible for the current Netflix’ architecture: &amp;quot;Loosely coupled service-oriented architecture with bounded contexts&amp;quot;&lt;/p&gt;
+&lt;h3 id=&quot;automatically-measuring-the-maintainability-of-service--and-microservice-based-systems-a-literature-review&quot;&gt;Automatically Measuring the Maintainability of Service- and Microservice-based Systems – a Literature Review&lt;/h3&gt;
+&lt;p&gt;The authors of this article, Bogner-Wagner and Zimmermann [3] define Service-based System (SBS) in line with M.P. Papazoglou’s definition from the paper from 2003 Service-oriented computing: concepts, characteristics and directions. An SBS [3] is a software system that leverages services as the essential computational element shares the following characteristics: they are self-contained, composable, technology-neutral, loosely coupled and allow for location transparency. Later, microservices are defined; a Microservice-based System (μSBS) [3] is a specialisation of an SBS that is constituted by fine-grained independent services and focuses on decentralisation of control management, lightweight communication mechanisms and technological heterogeny. The definition continues describing the organisation and coincides with characteristics we found in [13], namely, the presence of &amp;quot;automated deployment machinery&amp;quot; and a strong DevOps culture. The definition continues mentioning that a single microservice represent a small unit of functionality, characteristic that is also present in all previous descriptions. The authors call this characteristic &amp;quot;the bounded context&amp;quot; which increases application resiliency, efficient scalability as well as fast and independent deployment. The paper proceeds with the analysis of the study of maintainability of this architectures and automation of methods to measure maintainability of μSBS.&lt;/p&gt;
+&lt;h2 id=&quot;interesting&quot;&gt;Interesting&lt;/h2&gt;
+&lt;p&gt;yes, very interesting, but there is much more. I tell you soon.&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[3] Justus Bogner, Stefan Wagner, and Alfred Zimmermann. “Auto- matically Measuring the Maintainability of Service- and Microservice- based Systems: A Literature Review.” In: Proceedings of the 27th International Workshop on Software Measurement and 12th International Conference on Software Process and Product Measurement. IWSM Mensura ’17. Gothenburg: ACM, 2017, pp. 107–115. isbn: 978-1-4503- 4853-9. doi: 10.1145/3143434.3143443 . url: http://doi.acm.org/ 10.1145/3143434.3143443 .&lt;/p&gt;
+&lt;p&gt;[6] Nicola Dragoni et al. “Microservices: Yesterday, Today, and Tomor row.” In: Present and Ulterior Software Engineering. Ed. by Manuel Mazzara and Bertrand Meyer. Cham: Springer International Publishing, 2017, pp. 195–216. isbn: 978-3-319-67425-4. doi: 10.1007/ 978-3-319-67425-4_12 . url: https://doi.org/10.1007/978-3-319-67425-4_12 .&lt;/p&gt;
+&lt;p&gt;[12] Manuel Mazzara et al. “Microservices Science and Engineering.” In: Proceedings of 5th International Conference in Software Engineering for Defence Applications. Ed. by Paolo Ciancarini et al. Cham: Springer International Publishing, 2018, pp. 11–20. isbn: 978-3- 319-70578-1.&lt;/p&gt;
+&lt;p&gt;[13] Felipe Osses, Gastón Márquez, and Hernán Astudillo. “Explo- ration of Academic and Industrial Evidence About Architectural Tactics and Patterns in Microservices.” In: Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings. ICSE ’18. Gothenburg, Sweden: ACM, 2018, pp. 256–257. isbn: 978-1-4503-5663-3. doi: 10 . 1145 / 3183440 . 3194958 . url: http://doi.acm.org/10.1145/3183440.3194958 .&lt;/p&gt;
+
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 26 Jun 2018 00:00:00 +0200
+</pubDate>
+</item>
+<item>
+<guid>
+http://nqn.github.io/posts-output/2018-06-04-found_conflicts_between_different_versions_of_fsharp_core/
+</guid>
+<link>
+http://nqn.github.io/posts-output/2018-06-04-found_conflicts_between_different_versions_of_fsharp_core/
+</link>
+<title>
+Found conflicts between different versions of FSharp.Core
+</title>
+<description>
+&lt;h2 id=&quot;hey-how-is-it-going&quot;&gt;Hey, how is it going?&lt;/h2&gt;
+&lt;p&gt;well, Life of coding fsharp in Linux is not that pleasant in June of 2018, well, most of the time to be honest. I mean, I love ML languages but I guess maintaining the tooling around it is hard.&lt;/p&gt;
+&lt;h2 id=&quot;what-happened&quot;&gt;what happened?&lt;/h2&gt;
+&lt;p&gt;I got the following warning when runing an F# console application built by dotnet cli version 2.1.4 on linux 16.04 :&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;&lt;span class=&quot;ex&quot;&gt;/usr/share/dotnet/sdk/2.1.4&lt;/span&gt;/&lt;span class=&quot;ex&quot;&gt;Microsoft.Common.CurrentVersion.targets&lt;/span&gt;(2041,5)&lt;span class=&quot;bu&quot;&gt;:&lt;/span&gt; warning MSB3277: 
+&lt;span class=&quot;ex&quot;&gt;Found&lt;/span&gt; conflicts between different versions of &lt;span class=&quot;st&quot;&gt;&amp;quot;FSharp.Core&amp;quot;&lt;/span&gt; that could not be resolved.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;which leads to the following error when running: &lt;code&gt;dotnet run&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;&lt;span class=&quot;ex&quot;&gt;Unhandled&lt;/span&gt; Exception: System.IO.FileLoadException: Could not load file or assembly &lt;span class=&quot;st&quot;&gt;&amp;#39;FSharp.Core, Version=4.4.3.0, &lt;/span&gt;
+&lt;span class=&quot;st&quot;&gt;Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&amp;#39;&lt;/span&gt;. The located assembly&lt;span class=&quot;st&quot;&gt;&amp;#39;s manifest definition does not match the assembly &lt;/span&gt;
+&lt;span class=&quot;st&quot;&gt;reference. (Exception from HRESULT: 0x80131040)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;and-what-did-you-do-about-it&quot;&gt;and what did you do about it?&lt;/h2&gt;
+&lt;p&gt;I defined the version of FSharp.Core to 4.4.*. at the end of the project file. This file has .fsproj extension:&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode xml&quot;&gt;&lt;code class=&quot;sourceCode xml&quot;&gt;  &lt;span class=&quot;kw&quot;&gt;&amp;lt;ItemGroup&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kw&quot;&gt;&amp;lt;PackageReference&lt;/span&gt;&lt;span class=&quot;ot&quot;&gt; Include=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;quot;FSharp.Core&amp;quot;&lt;/span&gt;&lt;span class=&quot;ot&quot;&gt; Version=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;quot;4.4.*&amp;quot;&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;kw&quot;&gt;&amp;lt;/ItemGroup&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;nice-catch&quot;&gt;nice catch&lt;/h2&gt;
+&lt;p&gt;I do not remember where I found the answer.&lt;/p&gt;
+
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 04 Jun 2018 00:00:00 +0200
+</pubDate>
+</item>
+<item>
+<guid>
+http://nqn.github.io/posts-output/2015-06-15-induction/
+</guid>
+<link>
+http://nqn.github.io/posts-output/2015-06-15-induction/
+</link>
+<title>
+Mathematical Induction
+</title>
+<description>
+&lt;h2 id=&quot;what&quot;&gt;WHAT?&lt;/h2&gt;
+&lt;p&gt;Is a tool that allows us to prove properties about a program, it is also a principle and a proof technique that is based on the use of a propositional function &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;&lt;/span&gt;, where if we prove that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;((1))&lt;/span&gt; is true, and &lt;span class=&quot;math inline&quot;&gt;∀&lt;em&gt;k&lt;/em&gt;.(&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)⟹&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1))&lt;/span&gt; are true for positive integers, then &lt;span class=&quot;math inline&quot;&gt;∀&lt;em&gt;n&lt;/em&gt;.&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;n&lt;/em&gt;)&lt;/span&gt; is true.&lt;/p&gt;
+&lt;p&gt;Sometimes the base case can be 0 or 1, the important thing is that it correspond to the minimal case of the sequence we want to prove. We are going to look at some cases where the base case is 8. For instance, if you want to prove that &lt;span class=&quot;math inline&quot;&gt;2&lt;sup&gt;&lt;em&gt;n&lt;/em&gt;&lt;/sup&gt; ≥ &lt;em&gt;n&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;, for all integers &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≥ 8&lt;/span&gt;, the base case should look like &lt;span class=&quot;math inline&quot;&gt;2&lt;sup&gt;8&lt;/sup&gt; ≥ 4&lt;sup&gt;8&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Properties are the same kind you will find in property based testing, which comes from an important area of Mathematics and Phylosophy called Logic. A property is an assertion about a something, that can be true or false. In our case we are going to look at properties about programs or computations.&lt;/p&gt;
+&lt;p&gt;Mathematical induction can be used only to prove results obtained in some other way. It is not a tool for discovering formulae or theorems.&lt;/p&gt;
+&lt;h2 id=&quot;why&quot;&gt;WHY?&lt;/h2&gt;
+&lt;p&gt;It is extremely important in the field of computer science because it is a tool that allows us to prove the correctness of programs. Computation can be performed recursively over the structure of the data, and as good hackers, we can exploit the inductive nature of a computation process using induction to prove results about a large variety of discrete objects. In practice, it is used to prove results about complexity of algorithms, the correctness of certain types of computer programs, or theorems about inductively defioned graphs and trees.&lt;/p&gt;
+&lt;p&gt;Originally, the method is used to establish statements about natural numbers, but as many resources in mathematics, it can be generalized to work on any recursive data structure, such lists or trees.&lt;/p&gt;
+&lt;h2 id=&quot;the-principle-of-mathematical-induction&quot;&gt;The principle of mathematical induction&lt;/h2&gt;
+&lt;p&gt;provides us with a very powerful technique to prove several mathematical regards. You show that the first case is true, and show if any case is true, the following case is also true.&lt;/p&gt;
+&lt;p&gt;A statement, a predicate which depends on we can prove a statement like &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)⇒&lt;em&gt;x&lt;/em&gt; &amp;gt; 5&lt;/span&gt; then assuming that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt; is true, we can prove that the statement is also true for &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt; + 1&lt;/span&gt;&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;((1))&lt;/span&gt; is true&lt;/li&gt;
+&lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;∀&lt;em&gt;k&lt;/em&gt;  = 1, &lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)⇒&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;((1))&lt;em&gt;t&lt;/em&gt;&lt;em&gt;r&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;e&lt;/em&gt; ⇒ &lt;em&gt;P&lt;/em&gt;((2))&lt;em&gt;t&lt;/em&gt;&lt;em&gt;r&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;e&lt;/em&gt; ⇒ &lt;em&gt;P&lt;/em&gt;((3))&lt;em&gt;t&lt;/em&gt;&lt;em&gt;r&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;e&lt;/em&gt; ⇒ ...&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;how&quot;&gt;How?&lt;/h2&gt;
+&lt;h3 id=&quot;proofs-using-the-principle-of-mathematical-induction&quot;&gt;Proofs using the principle of mathematical induction&lt;/h3&gt;
+&lt;p&gt;A proof by mathematical induction has two parts: a &lt;strong&gt;basis step&lt;/strong&gt; or base case, where we show that P is true for the minimum value of the result to be proved, and an &lt;strong&gt;inductive step&lt;/strong&gt;, wherewe show that for all integers k, if &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)&lt;/span&gt; is true, then &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt; is also true.&lt;/p&gt;
+&lt;p&gt;Three steps!. Two Parts&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;strong&gt;basis of induction:&lt;/strong&gt; proof that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;n&lt;/em&gt;)&lt;/span&gt; is true for the minimal case, generally 0 or 1.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Induction hypothesis:&lt;/strong&gt;. Asume that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)&lt;/span&gt; is true&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inductive step:&lt;/strong&gt; show that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt; is true for the basis of the induction hypothesis&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;proof-by-inductions-hello-world&quot;&gt;Proof by induction's Hello World&lt;/h3&gt;
+&lt;p&gt;Usually we find the use the following property as an introduction to the subject [&lt;a href=&quot;#fn1&quot; class=&quot;footnoteRef&quot; id=&quot;fnref1&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;] [&lt;a href=&quot;#fn2&quot; class=&quot;footnoteRef&quot; id=&quot;fnref2&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;].&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\forall n\left[\sum_{i=0}^n i= \frac{n(n+1)}{2}\right]
+$$&lt;/span&gt;&lt;br /&gt; where &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; &amp;gt; =1&lt;/span&gt; in a finite integer&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;Basis of induction n = 1 , 1 ( 1 + 1) / 2 = 1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;so &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;S&lt;/em&gt;(1)=&lt;em&gt;n&lt;/em&gt;(&lt;em&gt;n&lt;/em&gt; + 1)/2&lt;/span&gt; is true for 1&lt;/p&gt;
+&lt;ol start=&quot;2&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;Induction hypothesis Suppose for &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt; &amp;gt; =1&lt;/span&gt; &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;S&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)=&lt;em&gt;k&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)/2&lt;/span&gt; is true&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;3.Inductive step &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;S&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)=1 + 2 + 3 + 4 + ... + &lt;em&gt;k&lt;/em&gt; + (&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;=(&lt;em&gt;k&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)/2)+(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;We want to prove the following:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$1²+2²+3²+...+n² = \frac{n(n+1)(2n+1)}{6}$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;for any &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≥ 1&lt;/span&gt; such that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ∈ ℕ&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Inductive case:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$ 1² = 1 \wedge \frac{1(1+1)(2+1)}{6}= 1$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;note that replacing &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; with &lt;span class=&quot;math inline&quot;&gt;1&lt;/span&gt; gives us 1 as expected, which is also equal to &lt;span class=&quot;math inline&quot;&gt;1&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Induction hypothesis. We asume that the following is true:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$\frac{k(k+1)(2k+1)}{6}$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;or in other words, that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)&lt;/span&gt; is true.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Inductive step:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Then, if &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)&lt;/span&gt; is true, we are going to prove that &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt; is also true.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$\begin{align}
+\textcolor{limegreen}{
+1²+2²+3²+...}+
+\textcolor{magenta}{n^2} = \frac{n(n+1)(2n+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;the left hand side of the equation is equivalent to &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt;)+&lt;em&gt;P&lt;/em&gt;(&lt;em&gt;k&lt;/em&gt; + 1)&lt;/span&gt;, according to our induction hypothesis. So let's express that, as follows&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\textcolor{limegreen}{    
+  \frac{k(k+1)(2k+1)}{6}
+}  +
+\textcolor{magenta}{
+  (k+1)^2
+  } = \frac{
+       \textcolor{turquoise}{n}
+       (\textcolor{turquoise}{n}+1)(2
+        \textcolor{turquoise}{n}+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;On the right hand side we replace every &lt;span class=&quot;math inline&quot;&gt;$\textcolor{turquoise}{n }$&lt;/span&gt; occurence by $ $&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\textcolor{limegreen}{    
+  \frac{k(k+1)(2k+1)}{6}
+}  +
+\textcolor{magenta}{
+  (k+1)^2
+  } = \frac{
+         \textcolor{turquoise}{(k+1)}
+          (\textcolor{turquoise}{(k+1)}+1)(2
+           \textcolor{turquoise}{(k+1)}+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;In order to add the second term on the left hand side, it has to share the same denominator&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\frac{k(k+1)(2k+1)}{6}+
+  \frac{\textcolor{magenta}{6}(k+1)^2}{
+    \textcolor{magenta}{6}}
+= \frac{(k+1)((k+1)+1)((2k+1)+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;by algebra&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\frac{(k^2+k)(2k+1)+(6k+6)(k+1)}{6}
+= \frac{(k+1)((k+1)+1)((2k+1)+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\frac{(k^2+k)(2k+1)+(6k+6)(k+1)}{6}
+= \frac{(k+1)((k+1)+1)((2k+1)+1)}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\frac{2k^3 + k²+ 2k^2 + k +6k^2 + 6k+ 6k+ 6}{6} =
+\frac{2k^3 + 3k^3+ 4k^2+ 6k + 2k^2 + 3k +4k+ 6}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;$$
+\begin{align}
+\frac{2k^3 + 9k^2 + 13k + 6}{6} = \frac{2k^3 + 9k^2 + 13k + 6}{6}
+\end{align}
+$$&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;math display&quot;&gt;□&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;p&gt;A funny way to get a better grasp about induction is the great book &lt;a href=&quot;https://mitpress.mit.edu/books/little-prover&quot;&gt;The Little Prover&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chapter 5 from both books: [Discrete Mathematics with Applications&lt;a href=&quot;#fn3&quot; class=&quot;footnoteRef&quot; id=&quot;fnref3&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; and [Discrete Mathematics and its Applications [^2 ]&lt;/p&gt;
+&lt;p&gt;Chapters 3 and 4 of [Discrete Mathematics using a computer -John O’Donnell, Cordelia Hall-Springer]&lt;/p&gt;
+&lt;p&gt;If you are good at Danish, I will definetely check the lectures on Induction from a discrete math course at DTU:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://podcast.llab.dtu.dk/feeds/01017-diskret-matematik/?tx_enotepodcast_pi1%5BshowDetails%5D=3570e67cd3fc3d7ca8da4b27cc2a2f7f&amp;amp;cHash=1c6b6d9fa1a4a5eb76f648cb5b6a7667&quot;&gt;DTU Podcast: Induktion 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://podcast.llab.dtu.dk/feeds/01017-diskret-matematik/?tx_enotepodcast_pi1%5BshowDetails%5D=5c3e060620827523c0d70c0d0fed9102&amp;amp;cHash=0312c2e8a34c1002d2024c09be4195d5&quot;&gt;DTU Podcast: Induktion 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://podcast.llab.dtu.dk/feeds/01017-diskret-matematik/?tx_enotepodcast_pi1%5BshowDetails%5D=ace7086958f383bfb786051b9dc53b52&amp;amp;cHash=2a52672448a763990739539b14971769&quot;&gt;DTU Podcast: Induktion 3&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;&lt;a href=&quot;http://condor.depaul.edu/sepp/DMwA4e.htm&quot;&gt;Discrete Mathematics with Applications.Sussana S. Epp. Fourth Edition&lt;/a&gt;&lt;a href=&quot;#fnref1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.uk/Discrete-Mathematics-Applications-College-Overruns/dp/0071315012&quot;&gt;Discrete Mathematics and its applications. Kenneth H. Rosen, Seventh Edition&lt;/a&gt;&lt;a href=&quot;#fnref2&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn3&quot;&gt;&lt;p&gt;&lt;a href=&quot;http://condor.depaul.edu/sepp/DMwA4e.htm&quot;&gt;Discrete Mathematics with Applications.Sussana S. Epp. Fourth Edition&lt;/a&gt;&lt;a href=&quot;#fnref3&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 15 Jun 2015 00:00:00 +0200
+</pubDate>
+</item>
+</channel>
+</rss>

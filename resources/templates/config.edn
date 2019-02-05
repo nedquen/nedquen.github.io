@@ -1,16 +1,16 @@
-{:site-title           "Ñedquen - Functional Programming"
+{:site-title           "Ñedquen - NqN"
  :author               "OscarFToro"
- :description          "Computer Science and Mathematics"
- :site-url             "http://oscarftoro.github.io/"
+ :description          "Computer Science and Applied Mathematics"
+ :site-url             "http://nqn.github.io/"
  :post-root            "posts"
  :page-root            "pages"
  :post-root-uri        "posts-output"
  :page-root-uri        "pages-output"
  :tag-root-uri         "tags-output"
  :author-root-uri      "authors-output"
- :blog-prefix          "/blog"
+ :blog-prefix          "/"
  :rss-name             "feed.xml"
- :rss-filters          ["cryogen"]
+ :rss-filters          ["erlang","fsharp","f#","reasonml"]
  :recent-posts         3
  :post-date-format     "yyyy-MM-dd"
  :archive-group-format "yyyy MMMM"

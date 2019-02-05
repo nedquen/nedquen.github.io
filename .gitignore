@@ -5,8 +5,13 @@ pom.xml.asc
 /classes/
 /target/
 /checkouts/
+.vscode
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/
 .lein-failures
 /resources/public/
+resources/templates/md/drafts/
+resources/templates/themes/roto_chileno/css/fonts/
+resources/templates/themes/roto_chileno/js/MathJax/
+resources/templates/themes/roto_chileno/js/jquery.min.js

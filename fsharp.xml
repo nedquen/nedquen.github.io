@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://nqn.github.io/' rel='self' type='application/rss+xml'/>
+<title>
+Ñedquen - NqN
+</title>
+<link>
+http://nqn.github.io/
+</link>
+<description>
+Computer Science and Applied Mathematics
+</description>
+<lastBuildDate>
+Tue, 05 Feb 2019 11:46:19 +0100
+</lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://nqn.github.io/posts-output/2018-06-04-found_conflicts_between_different_versions_of_fsharp_core/
+</guid>
+<link>
+http://nqn.github.io/posts-output/2018-06-04-found_conflicts_between_different_versions_of_fsharp_core/
+</link>
+<title>
+Found conflicts between different versions of FSharp.Core
+</title>
+<description>
+&lt;h2 id=&quot;hey-how-is-it-going&quot;&gt;Hey, how is it going?&lt;/h2&gt;
+&lt;p&gt;well, Life of coding fsharp in Linux is not that pleasant in June of 2018, well, most of the time to be honest. I mean, I love ML languages but I guess maintaining the tooling around it is hard.&lt;/p&gt;
+&lt;h2 id=&quot;what-happened&quot;&gt;what happened?&lt;/h2&gt;
+&lt;p&gt;I got the following warning when runing an F# console application built by dotnet cli version 2.1.4 on linux 16.04 :&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;&lt;span class=&quot;ex&quot;&gt;/usr/share/dotnet/sdk/2.1.4&lt;/span&gt;/&lt;span class=&quot;ex&quot;&gt;Microsoft.Common.CurrentVersion.targets&lt;/span&gt;(2041,5)&lt;span class=&quot;bu&quot;&gt;:&lt;/span&gt; warning MSB3277: 
+&lt;span class=&quot;ex&quot;&gt;Found&lt;/span&gt; conflicts between different versions of &lt;span class=&quot;st&quot;&gt;&amp;quot;FSharp.Core&amp;quot;&lt;/span&gt; that could not be resolved.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;which leads to the following error when running: &lt;code&gt;dotnet run&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;&lt;span class=&quot;ex&quot;&gt;Unhandled&lt;/span&gt; Exception: System.IO.FileLoadException: Could not load file or assembly &lt;span class=&quot;st&quot;&gt;&amp;#39;FSharp.Core, Version=4.4.3.0, &lt;/span&gt;
+&lt;span class=&quot;st&quot;&gt;Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&amp;#39;&lt;/span&gt;. The located assembly&lt;span class=&quot;st&quot;&gt;&amp;#39;s manifest definition does not match the assembly &lt;/span&gt;
+&lt;span class=&quot;st&quot;&gt;reference. (Exception from HRESULT: 0x80131040)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;and-what-did-you-do-about-it&quot;&gt;and what did you do about it?&lt;/h2&gt;
+&lt;p&gt;I defined the version of FSharp.Core to 4.4.*. at the end of the project file. This file has .fsproj extension:&lt;/p&gt;
+&lt;div class=&quot;sourceCode&quot;&gt;&lt;pre class=&quot;sourceCode xml&quot;&gt;&lt;code class=&quot;sourceCode xml&quot;&gt;  &lt;span class=&quot;kw&quot;&gt;&amp;lt;ItemGroup&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kw&quot;&gt;&amp;lt;PackageReference&lt;/span&gt;&lt;span class=&quot;ot&quot;&gt; Include=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;quot;FSharp.Core&amp;quot;&lt;/span&gt;&lt;span class=&quot;ot&quot;&gt; Version=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;quot;4.4.*&amp;quot;&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;kw&quot;&gt;&amp;lt;/ItemGroup&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;nice-catch&quot;&gt;nice catch&lt;/h2&gt;
+&lt;p&gt;I do not remember where I found the answer.&lt;/p&gt;
+
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 04 Jun 2018 00:00:00 +0200
+</pubDate>
+</item>
+</channel>
+</rss>
